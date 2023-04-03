@@ -19,15 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 start
     steps:
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2.5.2
-      runs:
-        using: 'node16'
-        main: 'main.js'
     - name: Checkout
       uses: actions/checkout@master
     - name: Set up Python #安装python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.9
     - name: Install requests #安装requests
